@@ -1,0 +1,329 @@
+/* Google Fonts: DM Sans for body text and Manrope for headings */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+/* Visual identity: deep navy, teal, soft mint, and warm neutral */
+:root {
+    --navy: #17324d;
+    --navy-light: #244763;
+    --teal: #168b82;
+    --teal-dark: #10736c;
+    --mint: #e7f4f1;
+    --page-bg: #f3f7f6;
+    --surface: #ffffff;
+    --text: #263746;
+    --muted: #667987;
+    --border: #d9e4e5;
+    --table-stripe: #f0f7f6;
+    --table-hover: #dff1ee;
+    --shadow: 0 10px 28px rgba(23, 50, 77, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--page-bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+/* Header card: spacing, padding, border, and rounded corners */
+#top {
+    width: min(1000px, 92%);
+    margin: 28px auto 34px;
+    padding: 28px 34px;
+    color: #ffffff;
+    background: linear-gradient(125deg, var(--navy), var(--navy-light));
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.brand img {
+    display: block;
+    flex: 0 0 auto;
+    width: 68px;
+    height: 68px;
+    object-fit: contain;
+    padding: 8px;
+    background-color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-radius: 16px;
+}
+
+h1,
+h2 {
+    font-family: 'Manrope', sans-serif;
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+}
+
+.page-header h1 {
+    margin: 0 0 6px;
+    color: #ffffff;
+    font-size: clamp(1.7rem, 4vw, 2.35rem);
+    font-weight: 800;
+}
+
+.page-header p {
+    margin: 0;
+    color: #dce9ef;
+    font-size: 1rem;
+}
+
+.container {
+    width: min(1000px, 92%);
+    margin: 0 auto 36px;
+}
+
+/* Form card */
+.expense-form-section {
+    margin: 0 0 26px;
+    padding: 28px 30px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--teal);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+.expense-form-section h2,
+.expenses-section h2,
+.video-section h2 {
+    margin: 0 0 20px;
+    color: var(--navy);
+    font-size: 1.45rem;
+    font-weight: 800;
+}
+
+.form-field {
+    margin: 0 0 18px;
+}
+
+label {
+    display: block;
+    margin: 0 0 7px;
+    color: var(--navy);
+    font-size: 0.94rem;
+    font-weight: 700;
+}
+
+input:not([type="submit"]),
+select {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    padding: 11px 14px;
+    color: var(--text);
+    background-color: #fbfdfd;
+    border: 1px solid #cbd9dc;
+    border-radius: 9px;
+    font: inherit;
+    transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+input::placeholder {
+    color: #94a4ad;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    background-color: #ffffff;
+    border-color: var(--teal);
+    box-shadow: 0 0 0 4px rgba(22, 139, 130, 0.13);
+}
+
+#add-expense-button {
+    display: inline-block;
+    margin-top: 2px;
+    padding: 12px 23px;
+    color: #ffffff;
+    background-color: var(--teal);
+    border: 1px solid var(--teal);
+    border-radius: 9px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.98rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(22, 139, 130, 0.18);
+    transition: background-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+#add-expense-button:hover {
+    background-color: var(--teal-dark);
+    box-shadow: 0 6px 14px rgba(22, 139, 130, 0.24);
+    transform: translateY(-1px);
+}
+
+#add-expense-button:active {
+    transform: translateY(0);
+}
+
+/* Expense table card */
+#your-expenses {
+    margin: 0 0 26px;
+    padding: 28px 30px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--navy-light);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--surface);
+}
+
+th,
+td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    white-space: nowrap;
+}
+
+th {
+    color: #ffffff;
+    background-color: var(--navy);
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+}
+
+td {
+    color: var(--text);
+    font-size: 0.94rem;
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--table-stripe);
+}
+
+tbody tr:hover {
+    background-color: var(--table-hover);
+}
+
+tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+/* Supporting sections use the same palette and rounded-card language */
+.help-section,
+.video-section {
+    margin: 0 0 26px;
+    padding: 23px 26px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+.help-section {
+    background-color: var(--mint);
+    border-left: 4px solid var(--teal);
+}
+
+.help-section summary {
+    color: var(--navy);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.help-section p {
+    margin: 12px 0 0;
+    color: var(--muted);
+}
+
+.video-section p {
+    margin: -8px 0 18px;
+    color: var(--muted);
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 620px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background-color: #e7eeee;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.video-wrapper iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.page-footer {
+    margin: 0;
+    padding: 24px 16px;
+    color: var(--muted);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+    #top {
+        margin-top: 16px;
+        margin-bottom: 24px;
+        padding: 22px 20px;
+    }
+
+    .brand {
+        align-items: flex-start;
+        gap: 13px;
+    }
+
+    .brand img {
+        width: 54px;
+        height: 54px;
+        padding: 6px;
+        border-radius: 12px;
+    }
+
+    .expense-form-section,
+    #your-expenses {
+        padding: 22px 18px;
+    }
+
+    .help-section,
+    .video-section {
+        padding: 20px 18px;
+    }
+
+    th,
+    td {
+        padding: 11px 12px;
+        font-size: 0.86rem;
+    }
+}
